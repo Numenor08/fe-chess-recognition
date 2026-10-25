@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "api:sync": "powershell -ExecutionPolicy Bypass -File ./sync-openapi.ps1",
+    "api:types": "openapi-typescript docs/api/openapi.json -o src/api/schema.d.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
@@ -30,6 +32,7 @@
     "eslint-plugin-react-refresh": "^0.5.7",
     "eslint-plugin-tailwindcss": "^4.4.0",
     "globals": "^17.13.0",
+    "openapi-typescript": "^7.13.0",
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.71.2",
     "vite": "^8.3.4"
