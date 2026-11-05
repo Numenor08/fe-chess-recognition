@@ -1,10 +1,26 @@
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 export function Navigation() {
+  const [isApiReady, setIsApiReady] = useState(false);
+  useEffect(() => {
+    const eventSource = new EventSource(`${import.meta.env.VITE_API_BASE_URL}/health/stream`);
+    eventSource.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      setIsApiReady(data.status);
+    };
+
+    eventSource.onerror = () => {
+      setIsApiReady(false);
+    };
+
+    return () => eventSource.close();
+  }, []);
+
   return (
     <header className="flex h-[78px] items-center gap-12 border-b border-[#dce4de] bg-[#f8faf7] px-7 max-[700px]:h-auto max-[700px]:min-h-[70px] max-[700px]:flex-wrap max-[700px]:gap-3 max-[700px]:p-4">
       <Link className="flex items-center gap-3 text-left" to="/">
-        <span className="grid size-[37px] place-items-center rounded-xl bg-[#315d49] text-[25px] text-[#d9f27e]">♞</span>
+        <img alt="FEN LAB logo" className="size-[37px] rounded-xl object-contain" src="/logo.png" />
         <span>
           <strong className="block text-sm tracking-[0.15em]">FEN LAB</strong>
           <small className="mt-0.5 block text-[10px] text-[#718079]">Research prototype</small>
@@ -30,7 +46,12 @@ export function Navigation() {
         </NavLink>
       </nav>
       <span className="ml-auto flex items-center gap-2 text-[11px] text-[#718079]">
-        <i className="size-2 rounded-full bg-[#72a160] shadow-[0_0_0_3px_#e0eddc]" /> API ready
+        <i 
+          className={`size-2 rounded-full shadow-[0_0_0_3px_#e0eddc] transition-colors duration-300 ${
+            isApiReady ? "bg-[#72a160]" : "bg-red-500"
+          }`} 
+        /> 
+        {isApiReady ? "API ready" : "API disconnected"}
       </span>
     </header>
   );
