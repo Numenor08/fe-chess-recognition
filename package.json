@@ -7,14 +7,18 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "preview": "vite preview",
     "api:sync": "powershell -ExecutionPolicy Bypass -File ./sync-openapi.ps1",
     "api:types": "openapi-typescript docs/api/openapi.json -o src/api/schema.d.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
+    "chess.js": "^1.4.0",
     "react": "^19.3.1",
+    "react-chessboard": "^5.12.1",
     "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {

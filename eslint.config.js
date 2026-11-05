@@ -19,6 +19,7 @@ export default defineConfig([
     rules: {
       "tailwindcss/classnames-order": "warn",
       "tailwindcss/no-arbitrary-value": "warn",
+      "tailwindcss/no-unnecessary-arbitrary-value": "warn",
       "tailwindcss/no-custom-classname": [
         "warn",
         { whitelist: ["custom\\-*"] },

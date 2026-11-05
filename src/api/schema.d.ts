@@ -97,21 +97,6 @@ export interface components {
             /** Fullmove Number */
             fullmove_number?: number | null;
             /**
-             * Analyze With Stockfish
-             * @default true
-             */
-            analyze_with_stockfish: boolean;
-            /**
-             * Stockfish Depth
-             * @default 12
-             */
-            stockfish_depth: number;
-            /**
-             * Show Variations
-             * @default 3
-             */
-            show_variations: number;
-            /**
              * Debug
              * @default false
              */
