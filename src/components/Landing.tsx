@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import { ChessBoard } from "./ChessBoard";
-import { Navigation } from "./Navigation";
 
 const HERO_FEN = "2r1nbk1/5p1p/p5p1/1N2Q3/q3P3/6Pb/2P2P1P/1R2N1K1 w - - 0 33";
 
 export default function Landing() {
   return (
     <div className="landing">
-      <Navigation />
       <main className="hero">
         <div className="hero-copy">
           <p className="eyebrow">COMPUTER VISION / CHESS RESEARCH</p>

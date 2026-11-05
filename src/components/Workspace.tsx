@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { analyzeFen, formatApiError, recognizePosition } from "../api/client";
 import { ChessBoard } from "./ChessBoard";
 import { Chess } from "chess.js";
-import { Navigation } from "./Navigation";
 import { PipelineDebugPanel } from "./PipelineDebugPanel";
 import { ResponsePreview } from "./ResponsePreview";
 import { Field, PanelTitle } from "./ui";
@@ -359,7 +358,6 @@ function Workspace() {
 
   return (
     <div className="app-shell">
-      <Navigation />
       <main className="mx-auto max-w-330 px-7 pt-[58px] pb-20 max-[700px]:px-4 max-[700px]:py-[35px]">
           <section className="mb-[34px] flex items-end justify-between max-[700px]:block">
             <div>
@@ -564,7 +562,7 @@ function Workspace() {
                   />
                 </label>
                 <div className="flex gap-2">
-                  <button className="flex-1 rounded-lg px-1 py-2 text-xs transition-colors bg-[#73936e] hover:brightness-80 font-semibold text-white" onClick={showFen}>
+                  <button className="flex-1 rounded-lg bg-[#73936e] px-1 py-2 text-xs font-semibold text-white transition-colors hover:brightness-80" onClick={showFen}>
                     Preview FEN
                   </button>
                   <button

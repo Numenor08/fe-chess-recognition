@@ -1,9 +1,6 @@
-import { Navigation } from "./Navigation";
-
 export default function About() {
   return (
     <div className="app-shell">
-      <Navigation />
       <main className="mx-auto max-w-[950px] px-7 py-20 max-[700px]:px-5 max-[700px]:py-[50px]">
         <p className="eyebrow">ABOUT THE PROJECT</p>
         <h1 className="m-0 text-[38px] font-semibold tracking-[-0.04em] text-[#17201d] max-[700px]:text-[32px]">
