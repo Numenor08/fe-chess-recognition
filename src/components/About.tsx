@@ -12,9 +12,8 @@ export default function About() {
           <i className="text-[#73936e] not-italic">machine-readable.</i>
         </h1>
         <p className="my-7 mb-11 max-w-[650px] text-xl leading-normal text-[#5d7067]">
-          FEN Lab is an thesis prototype for exploring how computer
-          vision can help people move from a physical chessboard to digital
-          analysis.
+          FEN Lab is an thesis prototype for exploring how computer vision can
+          help people move from a physical chessboard to digital analysis.
         </p>
         <div className="grid grid-cols-3 gap-4 max-[700px]:grid-cols-1">
           <article className="rounded-[14px] border border-[#dce4de] bg-white p-6">
@@ -45,8 +44,11 @@ export default function About() {
         </div>
         <div className="mt-7 rounded-[14px] border border-dashed border-[#dbeab8] bg-lime-50 p-9 text-[13px] text-[#567052]">
           Recognition quality depends on image clarity, board visibility,
-          lighting, and piece appearance. This interface makes no accuracy or
-          performance claims beyond the responses provided by the backend.
+          lighting, and the model architecture in use. As the models are trained
+          on the ChessReD2k benchmark, positions utilizing Staunton-style pieces
+          and board setups similar to the dataset will generally achieve higher
+          accuracy. This interface makes no accuracy or performance claims
+          beyond the responses provided by the backend.
         </div>
       </main>
     </div>
